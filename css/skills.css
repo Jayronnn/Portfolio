@@ -1,0 +1,131 @@
+/* =========================================================
+   TECHNICAL SKILLS SECTION STYLES
+   ========================================================= */
+.skills-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 5.5rem 0 2.5rem;
+}
+
+.skills-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.skills-header {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills-header .section-tag {
+  margin-bottom: 0.5rem;
+}
+
+.skills-header .section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.skills-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  text-align: left;
+}
+
+.skill-card {
+  padding: 1.15rem 1.45rem;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: transform 0.28s ease, border-color 0.28s ease, background-color 0.28s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-cyan);
+  background: rgba(20, 23, 40, 0.84);
+}
+
+.skill-category {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--accent-cyan);
+}
+
+.skill-card-title,
+.skill-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.skill-card-desc,
+.skill-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.48;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin-top: auto;
+  padding-top: 0.3rem;
+}
+
+.skill-tag {
+  padding: 0.24rem 0.62rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  border-radius: 999px;
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+}
+
+.skill-card:hover .skill-tag {
+  border-color: rgba(150, 104, 250, 0.35);
+}
+
+/* Desktop Fullscreen Centering */
+@media (min-width: 961px) {
+  .skills-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 0 2rem;
+  }
+}
+
+/* Responsive Technical Skills */
+@media (max-width: 860px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 5rem 0 3.5rem;
+  }
+
+  .skill-card {
+    padding: 1.35rem;
+  }
+}

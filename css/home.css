@@ -1,0 +1,230 @@
+/* =========================================================
+   HOME / HERO SECTION STYLES
+   ========================================================= */
+.home-section {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-top: 8.5rem;
+  padding-bottom: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: center;
+  gap: 3rem;
+  margin: auto 0;
+  padding: 2rem 0;
+  margin-left: 10%;
+}
+
+/* Status Pill */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(16, 22, 38, 0.72);
+  border: 1px solid rgba(92, 225, 230, 0.22);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+  animation: pulseDot 2.2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+
+/* Hero Typography */
+.home-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 6vw, 5.15rem);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.home-subtitle {
+  font-size: clamp(1.12rem, 1.75vw, 1.35rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+}
+
+.home-description {
+  font-size: 0.96rem;
+  color: var(--text-secondary);
+  max-width: 490px;
+  line-height: 1.7;
+  margin-bottom: 2.1rem;
+}
+
+/* Action Buttons */
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.86rem 1.6rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: #090a14;
+  box-shadow: 0 8px 26px rgba(139, 92, 246, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(92, 225, 230, 0.34);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+}
+
+.btn-secondary:hover {
+  border-color: var(--border-cyan);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.home-motto {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+}
+
+/* Right Visual: Wireframe Globe */
+.home-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nebula-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.24) 0%,
+    rgba(92, 225, 230, 0.15) 45%,
+    rgba(9, 10, 20, 0) 72%
+  );
+  filter: blur(26px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+#wireframe-globe {
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  display: block;
+}
+
+.visual-caption {
+  margin-top: 0.65rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--text-muted);
+}
+
+/* Footer Meta Bar */
+.home-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.meta-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  transition: color 0.25s ease;
+}
+
+.scroll-link:hover {
+  color: var(--accent-cyan);
+}
+
+/* Responsive Home */
+@media (max-width: 960px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+    margin-left: 0;
+  }
+
+  .home-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  .nebula-glow {
+    width: 310px;
+    height: 310px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-buttons .btn {
+    width: 100%;
+  }
+}
